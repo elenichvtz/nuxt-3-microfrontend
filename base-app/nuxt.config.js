@@ -26,6 +26,7 @@ export default defineNuxtConfig({
           injectTo: 'head', // Automatically inject styles into the <head>
         }
       }),
+      '~/plugins/microAppRoutes.js', // Register the route synchronization plugin
     ],
     build: {
       target: 'esnext', // Required for module federation

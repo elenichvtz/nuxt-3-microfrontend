@@ -1,5 +1,5 @@
 <template>
-    <div style="background-color: aqua;">
-        page one!
+    <div>
+        This is Page One of microfrontend 1.
     </div>
 </template>

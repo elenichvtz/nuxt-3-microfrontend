@@ -54,21 +54,19 @@ onMounted(async () => {
 
 <template>
   <div>
-    <h1>Base App</h1>
     <RemoteComponent :router="router" />
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+  import { ref, onMounted } from 'vue';
+  import { useRouter } from 'vue-router';
 
-const router = useRouter();
-const RemoteComponent = ref(null);
+  const router = useRouter();
+  const RemoteComponent = ref(null);
 
-onMounted(async () => {
-  const { default: module } = await import('microfrontend/App');
-  RemoteComponent.value = module;
-});
+  onMounted(async () => {
+    const { default: module } = await import('microfrontend/App');
+    RemoteComponent.value = module;
+  });
 </script>
-

@@ -14,8 +14,6 @@ export default defineNuxtConfig({
         name: 'microfrontend',
         filename: 'remoteEntry.js',
         exposes: {
-          // './Component': './components/MyComponent.vue',
-          // './PageOne' : './pages/PageOne.vue',
           './App': './pages/index.vue',
           './Router': './router/index.js', // Expose the router file
         },

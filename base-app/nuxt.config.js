@@ -14,6 +14,7 @@ export default defineNuxtConfig({
       federation({
         remotes: {
           microfrontend: 'http://localhost:3001/remoteEntry.js', // Remote entry URL
+          secondMicrofrontend: 'http://localhost:3002/remoteEntry.js',
         },
         shared: {
           vue: {

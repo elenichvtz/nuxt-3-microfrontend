@@ -3,19 +3,31 @@ import { ref, onMounted } from 'vue';
 import '~/assets/scss/styles.scss';
 
 const RemoteComponent = ref(null);
+const RemoteComponent2 = ref(null);
 
 onMounted(async () => {
-  const name = "microfrontend"; // Remote name defined in the base app's remotes
   try {
     // Dynamically import the exposed module from the remote
     const module = await import(/* @vite-ignore */ 'microfrontend/Component');
-    const p = 
-    console.log("Loaded module:", module);
+    
     RemoteComponent.value = module.default;
-  } catch (err) {
-    console.error(`Failed to load microfrontend: ${name}`, err);
+  } 
+  catch (err) {
     RemoteComponent.value = {
-      template: `<div>Microfrontend ${name} not available.</div>`,
+      template: `<div>Microfrontend not available.</div>`,
+    };
+  }
+
+  //second
+  try {
+    // Dynamically import the exposed module from the remote
+    const module2 = await import(/* @vite-ignore */ 'secondMicrofrontend/Component');
+    
+    RemoteComponent2.value = module2.default;
+  } 
+  catch (err) {
+    RemoteComponent2.value = {
+      template: `<div>Second microfrontend not available.</div>`,
     };
   }
 });
@@ -29,6 +41,13 @@ onMounted(async () => {
     </div>
     <div v-else>
       <p>Loading microfrontend...</p>
+    </div>
+    <br>
+    <div v-if="RemoteComponent2">
+      <component :is="RemoteComponent2" />
+    </div>
+    <div v-else>
+      <p>Loading second microfrontend...</p>
     </div>
   </div>
 </template>

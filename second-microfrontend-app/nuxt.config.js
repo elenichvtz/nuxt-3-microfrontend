@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   vite: {
     plugins: [
       federation({
-        name: 'microfrontend',
+        name: 'secondMicrofrontend',
         filename: 'remoteEntry.js',
         exposes: {
           './Component': './components/MyComponent.vue',

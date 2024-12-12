@@ -15,7 +15,7 @@ export default defineNuxtConfig({
         filename: 'remoteEntry.js',
         exposes: {
           './Component': './components/MyComponent.vue',
-          './PageDemo' : './pages/PageDemo.vue'
+          './PageOne' : './pages/PageOne.vue'
         },
       }),
     ],

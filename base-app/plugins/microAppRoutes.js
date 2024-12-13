@@ -10,4 +10,13 @@ export default defineNuxtPlugin(async (nuxtApp) => {
   } catch (err) {
     console.error('Failed to load micro app routes:', err);
   }
+
+  try {
+    const { default: microAppRoutes } = await import('secondMicrofrontend/Router'); // Dynamically load the routes
+    microAppRoutes.forEach((route) => {
+      router.addRoute(route);
+    });
+  } catch (err) {
+    console.error('Failed to load micro app routes:', err);
+  }
 });

@@ -1,4 +1,6 @@
 .card {
+    display: flex;
+    flex-direction: column;
     border-radius: 1.875rem;
     background: #FFF;
     box-shadow: 0px 12px 23px 0px rgba(62, 73, 84, 0.04); color: #3E4954;
@@ -9,4 +11,21 @@
     line-height: normal;
     padding: 1.5rem;
     width: fit-content;
+    gap: 1.5rem;
+}
+
+.blue-button {
+    border-radius: 3.75rem;
+    background: #5E6C93;
+    color: white;
+    color: #FFF;
+    font-family: Commissioner;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: 0;
+    padding: 1.25rem;
+    width: fit-content;
+    cursor: pointer;
 }

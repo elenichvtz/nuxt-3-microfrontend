@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <h1>
         This is Page One of microfrontend 1.
-    </div>
+    </h1>
 </template>

@@ -7,7 +7,6 @@
 
 <script setup>
     import '~/assets/scss/styles.scss';
-    import { defineProps } from 'vue';
 
     const props = defineProps({
         router: Object,

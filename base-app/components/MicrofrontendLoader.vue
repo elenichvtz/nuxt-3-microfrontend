@@ -54,7 +54,10 @@ onMounted(async () => {
 
 <template>
   <div>
+    <p>The whole Microfrontend 1 & 2 Apps are loaded below. The routing is imported dynamically from the micro apps.</p>
     <RemoteComponent :router="router" />
+    <br>
+    <RemoteComponent2 :router="router" />
   </div>
 </template>
 
@@ -64,9 +67,13 @@ onMounted(async () => {
 
   const router = useRouter();
   const RemoteComponent = ref(null);
+  const RemoteComponent2 = ref(null);
 
   onMounted(async () => {
     const { default: module } = await import('microfrontend/App');
     RemoteComponent.value = module;
+
+    const { default: module2 } = await import('secondMicrofrontend/App');
+    RemoteComponent2.value = module2;
   });
 </script>

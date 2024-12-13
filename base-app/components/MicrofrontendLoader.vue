@@ -80,12 +80,11 @@ onMounted(async () => {
 
 <template>
   <div>
-    <p>The whole Microfrontend 1 App is loaded below. The routing is imported dynamically from the micro app.</p>
-
     <!-- Button to navigate to the 'micro1' route -->
-    <button @click="goToMicro1">Go to Micro App 1</button>
-    <br>
-    <button @click="goToMicro2">Go to Micro App 2</button>
+    <button class="green-button" @click="goToMicro1">Go to Micro App 1</button>
+    <br><br>
+    <!-- Button to navigate to the 'micro2' route -->
+    <button class="green-button" @click="goToMicro2">Go to Micro App 2</button>
   </div>
 </template>
 
@@ -104,3 +103,20 @@ onMounted(async () => {
     router.push('/micro2');
   };
 </script>
+
+<style scoped>
+.green-button {
+  border-radius: 3.75rem;
+  background: #2CC6A2;
+  color: #FFF;
+  font-family: Commissioner;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: 0;
+  padding: 1.25rem;
+  width: fit-content;
+  cursor: pointer;
+}
+</style>

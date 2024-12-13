@@ -1,18 +1,23 @@
 <template>
     <div>
-      <p>Microfrontend 2 App Loaded Below:</p>
-      <div v-if="RemoteComponent">
-        <component :is="RemoteComponent" :router="router" />
-      </div>
-      <div v-else>
-        <p>Loading microfrontend...</p>
-      </div>
+      <sidebar>
+        <template v-slot:main>
+          <p>Microfrontend 2 App Loaded Below:</p>
+          <div v-if="RemoteComponent">
+            <component :is="RemoteComponent" :router="router" />
+          </div>
+          <div v-else>
+            <p>Loading microfrontend...</p>
+          </div>
+        </template>
+      </sidebar>
     </div>
-  </template>
+</template>
   
-  <script setup>
-    import { ref, onMounted } from 'vue';
+<script setup>
+  import { ref, onMounted } from 'vue';
   import { useRouter } from 'vue-router';
+  import sidebar from '../components/sidebar.vue';
 
   const router = useRouter();
   const RemoteComponent = ref(null);
@@ -22,5 +27,4 @@
     RemoteComponent.value = module;
 
   });
-  </script>
-  
+</script>

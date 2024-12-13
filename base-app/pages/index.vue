@@ -1,11 +1,14 @@
 <template>
     <div>
-      <h1>Base App: Microfrontend Integration</h1>
-      <MicrofrontendLoader />
+      <sidebar>
+        <template v-slot:main>
+          <h1>Base App: Microfrontend Integration</h1>
+        </template>
+      </sidebar>
     </div>
   </template>
   
   <script setup>
-  import MicrofrontendLoader from '~/components/MicrofrontendLoader.vue';
+  import sidebar from '../components/sidebar.vue';
   </script>
   

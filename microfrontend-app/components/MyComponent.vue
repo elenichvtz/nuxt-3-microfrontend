@@ -14,7 +14,7 @@
 
     const goToPageOne = () => {
         if (props.router) {
-            props.router.push('/pageone');
+            props.router.push('/micro1/pageone');
         } else {
             console.error('Router is not available');
         }

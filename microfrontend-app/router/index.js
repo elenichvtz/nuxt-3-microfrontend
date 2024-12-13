@@ -1,8 +1,8 @@
 // micro app router.js
 export default [
     {
-      path: '/pageone',
-      component: () => import('./pages/PageOne.vue'),
+      path: '/micro1/pageone',
+      component: () => import('./pages/micro1/PageOne.vue'),
     },
   ];
   

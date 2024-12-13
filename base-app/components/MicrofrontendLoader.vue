@@ -52,7 +52,7 @@ onMounted(async () => {
   </div>
 </template> -->
 
-<template>
+<!-- <template>
   <div>
     <p>The whole Microfrontend 1 & 2 Apps are loaded below. The routing is imported dynamically from the micro apps.</p>
     <RemoteComponent :router="router" />
@@ -76,4 +76,31 @@ onMounted(async () => {
     const { default: module2 } = await import('secondMicrofrontend/App');
     RemoteComponent2.value = module2;
   });
+</script> -->
+
+<template>
+  <div>
+    <p>The whole Microfrontend 1 App is loaded below. The routing is imported dynamically from the micro app.</p>
+
+    <!-- Button to navigate to the 'micro1' route -->
+    <button @click="goToMicro1">Go to Micro App 1</button>
+    <br>
+    <button @click="goToMicro2">Go to Micro App 2</button>
+  </div>
+</template>
+
+<script setup>
+  import { useRouter } from 'vue-router';
+
+  const router = useRouter();
+
+  // Method to navigate to the 'micro1' route
+  const goToMicro1 = () => {
+    router.push('/micro1');
+  };
+
+  // Method to navigate to the 'micro2' route
+  const goToMicro2 = () => {
+    router.push('/micro2');
+  };
 </script>

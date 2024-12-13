@@ -1,8 +1,8 @@
 // micro app router.js
 export default [
     {
-      path: '/pagetwo',
-      component: () => import('./pages/PageTwo.vue'),
+      path: '/micro2/pagetwo',
+      component: () => import('./pages/micro2/PageTwo.vue'),
     }
   ];
   

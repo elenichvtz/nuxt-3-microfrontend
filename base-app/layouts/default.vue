@@ -18,6 +18,13 @@
       <!-- Navigation Buttons -->
       <button class="green-button" @click="goToMicro1">Go to Micro App 1</button>
       <button class="green-button" @click="goToMicro2">Go to Micro App 2</button>
+
+      <hr />
+
+      <img :src="user?.pfp" alt="Profile Picture" class="pfp" v-if="user" />
+      <br>
+      <span>{{ user?.name }}</span>
+
     </nav>
 
     <div class="content">
@@ -49,6 +56,8 @@
   const goToMicro2 = () => {
     router.push('/micro2');
   };
+
+  const user = computed(() => authStore.user);
 
   const logout = () => {
     authStore.logout();

@@ -1,7 +1,7 @@
 <template>
     <div style="border: 1px solid black; padding: 0.5rem;">
-        Sidebar component from microfrontend 1:
-        <button class="blue-button" @click="goToPageOne">Go to Page One</button>
+        Sidebar component from microfrontend 2:
+        <button class="blue-button" @click="goToPageTwo">Go to Page Two</button>
         <br><br>
     </div>
     <br><br>
@@ -14,9 +14,9 @@
         router: Object,
     });
 
-    const goToPageOne = () => {
+    const goToPageTwo = () => {
         if (props.router) {
-            props.router.push('/micro1/pageone');
+            props.router.push('/micro2/pagetwo');
         } else {
             console.error('Router is not available');
         }

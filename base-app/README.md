@@ -1,75 +1,31 @@
-# Nuxt Minimal Starter
+# README Files for Base App and Micro Apps
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+### Base Application
 
-## Setup
+#### Introduction
+The Base Application serves as the main host for the micro frontends. It provides a shared layout, authentication system, and dynamically integrates micro apps for seamless navigation and functionality.
 
-Make sure to install dependencies:
+#### Installation and Setup
 
-```bash
-# npm
-npm install
+1. **Install Dependencies:**
+   ```bash
+   cd base-app
+   npm install
+   ```
 
-# pnpm
-pnpm install
+2. **Configure Environment Variables:**
+   Create a `.env` file (`.env.local` for local development) in the root directory and configure the following:
+   ```env
+   REMOTE_MICROFRONTEND1_URL=http://localhost:3001/remoteEntry.js
+   REMOTE_MICROFRONTEND2_URL=http://localhost:3002/remoteEntry.js
+   ```
 
-# yarn
-yarn install
+3. **Run the Application:**
+   ```bash
+   npm run dev
+   ```
 
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+#### Key Features
+- Dynamically integrates micro frontends.
+- Provides authentication and shared UI components.
+- Supports modular development using module federation.

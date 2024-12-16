@@ -1,75 +1,27 @@
-# Nuxt Minimal Starter
+### Micro App 1
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+#### Introduction
+Micro App 1 is a standalone microfrontend integrated into the Base Application. It includes specific features and a dedicated sidebar to enhance modularity.
 
-## Setup
+#### Installation and Setup
 
-Make sure to install dependencies:
+1. **Install Dependencies:**
+   Ensure you have [Node.js](https://nodejs.org/) (version 16 or later) and npm installed on your system. Then run:
+   ```bash
+   cd microfrontend-app
+   npm install
+   ```
 
-```bash
-# npm
-npm install
+2. **Build the Application:**
+   ```bash
+   npm run build
+   ```
 
-# pnpm
-pnpm install
+4. **Run the Application:**
+   ```bash
+   node server.js
+   ```
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+#### Key Features
+- Provides specific functionality and UI for modular integration.
+- Exposes `App` and `Sidebar` components for dynamic usage.

@@ -3,7 +3,7 @@
       <nav class="sidebar">
         <button class="green-button" @click="goToHome">Go to Home</button>
         <br><br>
-        <sidebarFromMicro v-if="sidebarFromMicro" :router="router" />
+        <sidebarFromMicro v-if="sidebarFromMicro" :router="router" :user="user"/>
         <sidebarContent />
         <br><br>
         <div>

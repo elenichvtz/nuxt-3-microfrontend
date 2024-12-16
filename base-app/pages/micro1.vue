@@ -4,7 +4,7 @@
         <template v-slot:main>
           <p>Microfrontend 1 App Loaded Below:</p>
           <div v-if="RemoteComponent">
-            <component :is="RemoteComponent" :router="router" />
+            <component :is="RemoteComponent" :router="router"/>
           </div>
           <div v-else>
             <p>Loading microfrontend...</p>
@@ -21,7 +21,6 @@
 
   const router = useRouter();
   const RemoteComponent = ref(null);
-
   const RemoteSidebar = ref(null);
 
   onMounted(async () => {

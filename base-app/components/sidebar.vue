@@ -3,8 +3,16 @@
       <nav class="sidebar">
         <button class="green-button" @click="goToHome">Go to Home</button>
         <br><br>
-        <sidebarFromMicro :router="router" />
+        <sidebarFromMicro v-if="sidebarFromMicro" :router="router" />
         <sidebarContent />
+        <br><br>
+        <div>
+          <img style="border-radius: 5rem;" :src="user?.pfp" alt="Profile Picture" class="pfp" v-if="user" />
+          <br>
+          <span>{{ user?.name }}</span>
+          <br><br>
+          <button @click="logout">Logout</button>
+        </div>
       </nav>
       <div class="content">
         <slot name="main"></slot>
@@ -16,16 +24,30 @@
   import sidebarContent from './sidebarContent.vue';
   import { useRouter } from 'vue-router';
   import '~/assets/scss/styles.scss';
-
+  import { useAuthStore } from '~/stores/authStore';
+  
+  const authStore = useAuthStore();
   const router = useRouter();
 
+  // Props
   const props = defineProps({
     sidebarFromMicro: Object,
   });
 
+  // Computed
+  const user = computed(() => authStore.user);
+
+  // Methods
+
   // Method to navigate to the '/' route
   const goToHome = () => {
     router.push('/');
+  };
+
+  const logout = () => {
+    authStore.logout();
+    // Redirect to login
+    window.location.href = '/login';
   };
 </script>
   

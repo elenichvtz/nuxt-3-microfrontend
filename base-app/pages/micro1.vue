@@ -15,7 +15,7 @@
   </template>
   
 <script setup>
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted, markRaw } from 'vue';
   import { useRouter } from 'vue-router';
   import sidebar from '../components/sidebar.vue';
 
@@ -26,10 +26,10 @@
 
   onMounted(async () => {
     const { default: module } = await import('microfrontend/App');
-    RemoteComponent.value = module;
+    RemoteComponent.value = markRaw(module);  // Prevent Vue from making this reactive
 
     const { default: sidebarmodule } = await import('microfrontend/Sidebar');
-    RemoteSidebar.value = sidebarmodule;
+    RemoteSidebar.value = markRaw(sidebarmodule); // Prevent Vue from making this reactive
   });
 </script>
   

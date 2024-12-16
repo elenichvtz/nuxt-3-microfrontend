@@ -27,6 +27,7 @@ export default defineNuxtConfig({
         }
       }),
       '~/plugins/microAppRoutes.js', // Register the route synchronization plugin
+      '~/plugins/auth.js',
     ],
     build: {
       target: 'esnext', // Required for module federation

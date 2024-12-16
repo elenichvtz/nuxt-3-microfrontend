@@ -4,8 +4,8 @@
         <button class="blue-button" @click="goToPageOne">Go to Page One</button>
         <br><br>
         Hello  from microfontend 1, user <b>{{ user.name }}</b>!
-        <br>
     </div>
+    <br><br>
 </template>
 
 <script setup>

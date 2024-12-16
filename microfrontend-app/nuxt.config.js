@@ -16,6 +16,7 @@ export default defineNuxtConfig({
         exposes: {
           './App': './pages/index.vue',
           './Router': './router/index.js', // Expose the router file
+          './Sidebar': './components/Sidebar.vue'
         },
       }),
     ],

@@ -79,7 +79,8 @@ onMounted(async () => {
 </script> -->
 
 <template>
-  <div>
+  <div style="border: 1px solid black; padding: 0.5rem;">
+    <p>Sidebar from base app</p>
     <!-- Button to navigate to the 'micro1' route -->
     <button class="green-button" @click="goToMicro1">Go to Micro App 1</button>
     <br><br>

@@ -20,3 +20,18 @@
   overflow-y: auto; /* Make content scrollable */
   padding: 20px;
 }
+
+.green-button {
+  border-radius: 3.75rem;
+  background: #2CC6A2;
+  color: #FFF;
+  font-family: Commissioner;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: 0;
+  padding: 1.25rem;
+  width: fit-content;
+  cursor: pointer;
+}

@@ -1,6 +1,6 @@
 <template>
     <div>
-      <sidebar>
+      <sidebar :sidebarFromMicro="RemoteSidebar">
         <template v-slot:main>
           <p>Microfrontend 1 App Loaded Below:</p>
           <div v-if="RemoteComponent">
@@ -22,10 +22,14 @@
   const router = useRouter();
   const RemoteComponent = ref(null);
 
+  const RemoteSidebar = ref(null);
+
   onMounted(async () => {
     const { default: module } = await import('microfrontend/App');
     RemoteComponent.value = module;
 
+    const { default: sidebarmodule } = await import('microfrontend/Sidebar');
+    RemoteSidebar.value = sidebarmodule;
   });
 </script>
   

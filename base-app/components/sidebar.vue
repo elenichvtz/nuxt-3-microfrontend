@@ -1,7 +1,10 @@
 <template>
     <div class="app-container">
       <nav class="sidebar">
-        <MicrofrontendLoader />
+        <button class="green-button" @click="goToHome">Go to Home</button>
+        <br><br>
+        <sidebarFromMicro :router="router" />
+        <sidebarContent />
       </nav>
       <div class="content">
         <slot name="main"></slot>
@@ -10,7 +13,20 @@
 </template>
   
 <script setup>
-import MicrofrontendLoader from './MicrofrontendLoader.vue';
+  import sidebarContent from './sidebarContent.vue';
+  import { useRouter } from 'vue-router';
+  import '~/assets/scss/styles.scss';
+
+  const router = useRouter();
+
+  const props = defineProps({
+    sidebarFromMicro: Object,
+  });
+
+  // Method to navigate to the '/' route
+  const goToHome = () => {
+    router.push('/');
+  };
 </script>
   
 <style scoped>

@@ -1,19 +1,21 @@
 <template>
-    <div style="border: 1px solid black; padding: 0.5rem;">
-        Sidebar component from microfrontend 2:
-        <button class="blue-button" @click="goToPageTwo">Go to Page Two</button>
-        <br><br>
+    <div style="padding: 0 0.75rem;">
+        <h4>Micro App 2</h4>
+        <button class="button--nav" @click="goToPageTwo">
+            Page Two
+        </button>
     </div>
-    <br><br>
 </template>
 
 <script setup>
     import '~/assets/scss/styles.scss';
 
+    // Props
     const props = defineProps({
         router: Object,
     });
 
+    // Methods
     const goToPageTwo = () => {
         if (props.router) {
             props.router.push('/micro2/pagetwo');

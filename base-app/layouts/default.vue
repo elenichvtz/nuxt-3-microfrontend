@@ -14,14 +14,8 @@
             <img class="icon--nav" :src="homeIcon" alt="Home" >
             Home
           </button>
-      
-          <!-- Dynamically Render Microfrontend Sidebar -->
-          <div v-if="RemoteSidebar">
-            <component :is="RemoteSidebar" :router="router" v-if="RemoteSidebar" />
-          </div>
 
           <!-- Navigation Buttons -->
-        
           <button class="button--nav" @click="goToMicro1">
             <img class="icon--nav" :src="diagramIcon" alt="One" >
             Micro App 1
@@ -30,6 +24,9 @@
             <img class="icon--nav" :src="bellIcon" alt="Two" >
             Micro App 2
           </button>
+
+           <!-- Dynamically Render Microfrontend Sidebar -->
+           <component :is="RemoteSidebar" :router="router" v-if="RemoteSidebar" />
         </div>
       </div>
       

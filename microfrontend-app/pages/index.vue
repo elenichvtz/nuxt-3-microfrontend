@@ -1,7 +1,7 @@
 <template>
-  <MyComponent/>
+  <IndexContent/>
 </template>
   
 <script setup>
-  import MyComponent from './components/MyComponent.vue';
+  import IndexContent from './components/IndexContent.vue';
 </script>

@@ -76,6 +76,12 @@
   padding: 0.75rem;
   font-size: 16px;
   cursor: pointer;
+  width: 100%;
+}
+
+.button--nav:hover {
+  background-color: #F5F5F5;
+  border-radius: 0.625rem;
 }
 
 .icon--nav {
@@ -93,6 +99,6 @@
   width: calc(100% - 15rem);
   max-height: 100vh; /* Restrict content height to the viewport height */
   overflow-y: auto; /* Enable scrolling if content overflows */
-  padding: 2rem;
+  padding: 1rem 2rem;
   box-sizing: border-box; /* Include padding in the height calculation */
 }

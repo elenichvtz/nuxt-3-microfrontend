@@ -1,8 +1,5 @@
 <template>
   <div>
-    <header>
-      <h1>Microfrontend 1 App</h1>
-    </header>
     <div v-if="RemoteComponent">
       <component :is="RemoteComponent" :router="router"/>
     </div>

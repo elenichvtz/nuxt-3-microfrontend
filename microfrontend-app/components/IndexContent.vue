@@ -1,4 +1,10 @@
 <template>
+    <header>
+        <h1>Microfrontend App 1</h1>
+    </header>
+    <p>
+        The whole micro app 1 is loaded here. 
+    </p>
     <div class="card">
         This is a Card from microfrontend app 1.
         <button class="blue-button" @click="goToPageOne">Go to Page One</button>

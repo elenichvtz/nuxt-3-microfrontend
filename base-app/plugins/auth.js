@@ -16,6 +16,11 @@ export default defineNuxtPlugin((nuxtApp) => {
     if (token) {
         authStore.token = token;
         // Simulate fetching user info
-        authStore.setUser({ id: 1, name: 'John Doe', pfp: 'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5d/5d49a8a7de435cebab22b76479344fc16f8defb4.jpg' });
+        authStore.setUser({ 
+            id: 1, 
+            name: 'Jane Doe',
+            email: 'janedoe@example.com',
+            pfp: 'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5d/5d49a8a7de435cebab22b76479344fc16f8defb4.jpg' 
+        });
     }
 });

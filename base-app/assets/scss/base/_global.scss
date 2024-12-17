@@ -1,3 +1,18 @@
 body {
     background-color: #F3F2F7;
+    font-family: Commissioner, sans-serif;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
 }

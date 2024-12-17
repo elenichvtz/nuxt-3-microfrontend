@@ -2,28 +2,51 @@
   <div class="app-container">
     <nav class="sidebar">
       <!-- Base Sidebar Content -->
-      <p>Base Sidebar</p>
-      <button @click="goToHome">Home</button>
-      <button @click="logout">Logout</button>
+      
+      <div class="column sidebar-main-nav">
+        <div class="row sidebar-main-top">
+          <img class="logo" src="https://picsum.photos/200" alt="Logo">
+          <h3>Microfrontend Integration</h3>
+        </div>
 
-      <hr />
+        <div class="column sidebar-apps-nav">
+          <button class="button--nav" @click="goToHome">
+            <img class="icon--nav" :src="homeIcon" alt="Home" >
+            Home
+          </button>
+      
+          <!-- Dynamically Render Microfrontend Sidebar -->
+          <div v-if="RemoteSidebar">
+            <component :is="RemoteSidebar" :router="router" v-if="RemoteSidebar" />
+          </div>
 
-      <!-- Dynamically Render Microfrontend Sidebar -->
-      <div v-if="RemoteSidebar">
-        <component :is="RemoteSidebar" :router="router" v-if="RemoteSidebar" />
+          <!-- Navigation Buttons -->
+        
+          <button class="button--nav" @click="goToMicro1">
+            <img class="icon--nav" :src="diagramIcon" alt="One" >
+            Micro App 1
+          </button>
+          <button class="button--nav" @click="goToMicro2">
+            <img class="icon--nav" :src="bellIcon" alt="Two" >
+            Micro App 2
+          </button>
+        </div>
       </div>
+      
+      <div class="column sidebar-bottom">
+        <button class="button--nav" @click="logout">
+          <img class="icon--nav" :src="logoutIcon" alt="Logout" >
+          Logout
+        </button>
 
-      <hr />
-
-      <!-- Navigation Buttons -->
-      <button class="green-button" @click="goToMicro1">Go to Micro App 1</button>
-      <button class="green-button" @click="goToMicro2">Go to Micro App 2</button>
-
-      <hr />
-
-      <img :src="user?.pfp" alt="Profile Picture" class="pfp" v-if="user" />
-      <br>
-      <span>{{ user?.name }}</span>
+        <div class="row profile">
+          <img :src="user?.pfp" alt="Profile Picture" class="pfp" v-if="user" />
+          <div class="colum">
+            <b>{{ user?.name }}</b>
+            <div class="email">{{ user?.email }}</div>
+          </div>
+        </div>
+      </div>
 
     </nav>
 
@@ -39,11 +62,16 @@
   import { ref, onMounted, watch, markRaw } from 'vue';
   import { useRoute, useRouter } from 'vue-router';
   import { useAuthStore } from '~/stores/authStore';
+  import '~/assets/scss/styles.scss';
 
   const router = useRouter();
   const route = useRoute();
   const authStore = useAuthStore();
   const RemoteSidebar = ref(null);
+  const logoutIcon = "/icons/logout.svg";
+  const homeIcon = "/icons/home.svg";
+  const diagramIcon = "/icons/diagram.svg";
+  const bellIcon = "/icons/bell.svg";
 
   const goToHome = () => {
     router.push('/');
@@ -83,29 +111,3 @@
   watch(() => route.path, loadMicroSidebar);
   onMounted(loadMicroSidebar);
 </script>
-
-<style scoped>
-  /* Styles for the layout */
-  .app-container {
-    display: flex;
-    height: 100vh; /* Full height of the viewport */
-  }
-
-  .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 150px; /* Adjust width as needed */
-    background-color: #f0f0f0; /* Background color for the sidebar */
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow for visual effect */
-  }
-
-  .content {
-    margin-left: 200px; /* Same as the sidebar width */
-    width: calc(100% - 200px);
-    overflow-y: auto; /* Make content scrollable */
-    padding: 20px;
-  }
-</style>

@@ -25,3 +25,6 @@ Micro App 1 is a standalone microfrontend integrated into the Base Application. 
 #### Key Features
 - Provides specific functionality and UI for modular integration.
 - Exposes `App` and `Sidebar` components for dynamic usage.
+
+### Notes
+- Don't forget to expose the `App`, `Router` and `Sidebar` in `nuxt.config.js`.

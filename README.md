@@ -9,11 +9,11 @@ This project demonstrates a modular architecture using micro frontends, enabling
 - **Dynamic Sidebar Integration**: The Base Application dynamically loads and displays sidebars specific to each microfrontend, ensuring consistent user experience.
 
 #### Attention Points
-1. **Module Federation Setup**: Verify the configuration of `@originjs/vite-plugin-federation` in each app's build system for proper integration.
-2. **Environment Variables**: Accurate configuration in the `.env` file is essential for inter-application communication.
-3. **Port Management**: Each micro app must run on its designated port to avoid conflicts and ensure smooth operation.
-4. **Vue Dependency Management**: Ensure consistent Vue versions across all apps to avoid runtime issues.
-5. **Shared Components**: Components like sidebars are exposed dynamically; observe how they are loaded conditionally based on routing context.
+- **Module Federation Setup**: Verify the configuration of `@originjs/vite-plugin-federation` in each app's build system for proper integration.
+- **Environment Variables**: Accurate configuration in the `.env` file is essential for inter-application communication.
+- **Port Management**: Each micro app must run on its designated port to avoid conflicts and ensure smooth operation.
+- **Vue Dependency Management**: Ensure consistent Vue versions across all apps to avoid runtime issues.
+- **Shared Components**: Components like sidebars are exposed dynamically; observe how they are loaded conditionally based on routing context.
 
 The applications provide detailed setup instructions in their respective **README.md** files.
 
@@ -24,5 +24,5 @@ The applications provide detailed setup instructions in their respective **READM
    ```
 
 ### Notes
-1. Make sure all apps are running on their respective ports as configured in the `.env` files and remote module federation settings.
-2. Ensure Vue versions are compatible across all apps to avoid runtime conflicts.
+- Make sure all apps are running on their respective ports as configured in the `.env` files and remote module federation settings.
+- Ensure Vue versions are compatible across all apps to avoid runtime conflicts.

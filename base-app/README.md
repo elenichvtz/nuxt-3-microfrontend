@@ -29,4 +29,7 @@ The Base Application serves as the main host for the micro frontends. It provide
 - Supports modular development using module federation.
 
 ### Adding a new micro app
-- 
+- Update `nuxt.config.js` to import remote microfrontend app.
+- In `plugins/microAppRoutes.js`, add the import of the micro app's Router, to dynamically load the app's routes.
+- In `layouts/default.vue`, add the dynamic loading of the micro app's Sidebar component, as well as a button
+   and a method to navigate to micro app.
